@@ -1,0 +1,146 @@
+.List_container {
+  box-sizing: border-box;
+  margin: auto;
+  background-color: #ebeff3;
+  @media all and (min-width: 768px) and (max-width: 1080px) {
+  }
+
+  .List_wrapper {
+    border: 1px solid black;
+    border-style: none;
+    height: 75px;
+    width: 92%;
+    background-color: #f6f5f0;
+  }
+
+  .List_logo {
+    font-family: 'Bree Serif', serif;
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+    float: left;
+    background-color: #f6f5f0;
+    margin-left: 40px;
+  }
+
+  .List_nav {
+    float: right;
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    color: #d4d3ce;
+    margin-right: 50px;
+    ul {
+      background-color: #f6f5f0;
+      padding: 0px;
+      margin: 10px;
+      margin-bottom: -30px;
+      margin-top: 0px;
+    }
+  }
+
+  .List_wrapper2 {
+    border: 1px solid black;
+    width: 92%;
+    height: 75px;
+    background-color: #f6f5f0;
+    margin-top: 20px;
+    position: relative;
+    border: none;
+    ul {
+      float: left;
+      background-color: #f6f5f0;
+      display: inline;
+    }
+  }
+
+  .List_cold {
+    position: relative;
+    margin-top: 30px;
+  }
+  .List_coffee_icon {
+    position: relative;
+    height: 70%;
+    width: 5%;
+    background-color: #f6f5f0;
+    display: inline;
+    margin-left: -20px;
+    margin-top: 20px;
+  }
+
+  .List_decaf1 {
+    position: relative;
+    margin-left: -472px;
+    margin-top: 30px;
+    padding-left: 0;
+  }
+
+  // // .wrapper3 {
+  // //     display: flex;
+  // //     justify-content: space-evenly;
+  // //     align-items: center;
+  // //     flex-direction: row;
+  // //     border: 1px solid black;
+  // //     width: 99.4%;
+  // //     height: 75px;
+  // //     background-color: #f6f5f0;
+  // //     border: none;
+  // // }
+
+  // // .coffee_icon2 {
+  // //     position: absolute;
+  // //     height: 7.5%;
+  // //     width: 5%;
+  // //     margin-top: -35px;
+  // //     margin-left: -27em;
+  // // }
+
+  // // .coffee-menu {
+  // //     display: flex;
+  // //     flex-wrap: wrap;
+  // //     justify-content: flex-start;
+  // //     column-gap: 2.1rem;
+  // //     text-align: center;
+  // //     margin-top: 30px;
+  // // }
+
+  // img {
+  //     width: 15.5rem;
+  //     height: 20rem;
+  //     transition: transform 0.3s;
+  // }
+
+  // img:hover {
+  //     transform: scale(1.1);
+  // }
+
+  // .image {
+  //     overflow: hidden;
+  // }
+
+  .List_coffee_image {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 5px;
+    margin-top: 20px;
+    img {
+      width: 15rem;
+      height: 20rem;
+      transition: transform 0.3s;
+    }
+    li {
+      margin-left: -20px;
+    }
+
+    img:hover {
+      transform: scale(1.1);
+    }
+
+    .image {
+      overflow: hidden;
+    }
+    h3 {
+      margin-left: 75px;
+    }
+  }
+}
