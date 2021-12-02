@@ -55,6 +55,7 @@ function Detail() {
               {inputText.map((e, i) => {
                 return (
                   <ReviewComment
+                    key={i}
                     text={e}
                     index={i}
                     inputText={inputText}
@@ -152,7 +153,7 @@ function BottomBar() {
 }
 //댓글기능
 function ReviewComment(props) {
-  let [like, setlike] = useState(["🤍"]);
+  let [like, setlike] = useState("🤍");
   return (
     <div className="commentBox">
       <span className="commentText">
@@ -169,10 +170,11 @@ function ReviewComment(props) {
       {/* 삭제버튼 */}
       <button
         className="deleteBtn"
-        onClick={() => {
-          let copy = [...props.inputText];
-          copy.splice(props.index, 1);
-          props.setinputText(copy);
+        onClick={(e) => {
+          e.target.parentElement.remove();
+          // let deepcopy = JSON.parse(JSON.stringify(props.inputText));
+          // deepcopy.splice(props.index, 1);
+          // props.setinputText(deepcopy);
         }}
       >
         삭제

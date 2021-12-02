@@ -25,7 +25,7 @@ function List() {
           <div className="상품들">
             {mockdata.cold &&
               mockdata.cold.map((e, i) => {
-                return <CoffeeCard item={e} index={i} />;
+                return <CoffeeCard key={i} item={e} />;
               })}
           </div>
         </div>
@@ -38,8 +38,8 @@ function List() {
           </div>
           <div className="상품들">
             {mockdata.shot &&
-              mockdata.shot.map((e) => {
-                return <CoffeeCard item={e} />;
+              mockdata.shot.map((e, i) => {
+                return <CoffeeCard key={i} item={e} />;
               })}
           </div>
         </div>
@@ -59,11 +59,7 @@ function CoffeeCard(props) {
         <span
           className="like"
           onClick={(e) => {
-            if (like === "🤍") {
-              setlike("❤️");
-            } else {
-              setlike("🤍");
-            }
+            like === "🤍" ? setlike("❤️") : setlike("🤍");
           }}
         >
           {like}
