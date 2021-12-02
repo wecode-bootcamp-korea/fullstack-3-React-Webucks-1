@@ -1,11 +1,15 @@
 import React from "react";
 import "./List.scss"
 import { Link } from "react-router-dom";
+import TopNav from "../component/TopNav";
 
 function List(){
     return(
     <div className="List_container">
-                <div className="List_wrapper"> 
+                <div>
+                <TopNav/>
+                </div>
+                {/* <div className="List_wrapper"> 
                     <h1 className="List_logo">WeBucks</h1>
                     <div className="List_nav">
                         <ul className="coffee">COFFEE</ul>
@@ -14,7 +18,7 @@ function List(){
                         <ul className="what">WHAT'S NEW</ul>      
                     </div>           
                 </div> 
-            
+             */}
                 <div className="List_wrapper2">
                     <ul className="List_cold">콜드 브루 커피</ul>
                     <ul><img className="List_coffee_icon" src="https://image.flaticon.com/223/png/512/924/924514.png?size=1200x630f" alt="coffee"/></ul>

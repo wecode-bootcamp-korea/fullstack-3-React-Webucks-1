@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import LoginMinsu from "./pages/minsuKang/Login/Login";
-import ListMinsu from "./pages/minsuKang/List/List";
-import DetailMinsu from "./pages/minsuKang/Detail/Detail";
+import LoginMinsu from "./pages/minsuKang/Login/LoginMinsu";
+import ListMinsu from "./pages/minsuKang/List/ListMinsu";
+import DetailMinsu from "./pages/minsuKang/Detail/DetailMinsu";
 import LoginEunbi from "./pages/eunbiChoi/Login/Login";
 import ListEunbi from "./pages/eunbiChoi/List/List";
 import DetailEunbi from "./pages/eunbiChoi/Detail/Detail";

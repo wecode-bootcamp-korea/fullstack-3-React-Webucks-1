@@ -5,36 +5,36 @@
   @media all and (min-width: 768px) and (max-width: 1080px) {
   }
 
-  .Detail_wrapper {
+  .TopNav_wrapper {
     border: 1px solid black;
     border-style: none;
     height: 75px;
     width: 92%;
     background-color: rgb(246 245 240);
-  }
 
-  .Detail_logo {
-    font-family: 'Bree Serif', serif;
-    font-family: 'Dancing Script', cursive;
-    font-size: 40px;
-    float: left;
-    background-color: rgb(246 245 240);
-    margin-left: 40px;
-  }
+    .logo {
+      font-family: 'Bree Serif', serif;
+      font-family: 'Dancing Script', cursive;
+      font-size: 40px;
+      float: left;
+      background-color: rgb(246 245 240);
+      margin-left: 40px;
+    }
 
-  .Detail_nav {
-    float: right;
-    display: flex;
-    flex-direction: row;
-    margin-top: 30px;
-    color: #d4d3ce;
-    margin-right: 50px;
-    ul {
-      background-color: #f6f5f0;
-      padding: 0px;
-      margin: 10px;
-      margin-bottom: -30px;
-      margin-top: 0px;
+    .nav {
+      float: right;
+      display: flex;
+      flex-direction: row;
+      margin-top: 30px;
+      color: #d4d3ce;
+      margin-right: 50px;
+      ul {
+        background-color: #f6f5f0;
+        padding: 0px;
+        margin: 10px;
+        margin-bottom: -30px;
+        margin-top: 0px;
+      }
     }
   }
   .Detail_big_name {

@@ -1,12 +1,16 @@
 import React from "react";
 import "./Detail.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';;
+import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
+import TopNav from "../component/TopNav";
 
 function Detail(){
     return(   
 <div className="Detail_container">
-                    <div className="Detail_wrapper">
+                     <div>
+                     <TopNav/>
+                    </div>
+                    {/* <div className="Detail_wrapper">
                         <h1 className="Detail_logo">WeBucks</h1>
                         <div className="Detail_nav">
                             <ul className="coffee">COFFEE</ul>
@@ -14,7 +18,7 @@ function Detail(){
                             <ul className="store">STORE</ul>
                             <ul className="what">WHAT'S NEW</ul>   
                         </div>
-                    </div> 
+                    </div>  */}
                     
                     <h1 className="Detail_big_name">콜드 브루</h1>
                     
