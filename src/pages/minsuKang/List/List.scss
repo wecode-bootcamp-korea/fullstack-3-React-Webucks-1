@@ -135,7 +135,9 @@
       transform: scale(1.1);
     }
 
-    .image {
+    .image_container {
+      width: 15rem;
+      height: 20rem;
       overflow: hidden;
     }
     h3 {

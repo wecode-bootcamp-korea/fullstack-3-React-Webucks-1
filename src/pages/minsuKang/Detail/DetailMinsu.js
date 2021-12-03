@@ -1,10 +1,24 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "./Detail.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
 import TopNav from "../component/TopNav";
+import Comment from "../Comment/Comment";
+
 
 function Detail(){
+    const [comment,setComment] = useState([]);
+
+    useEffect(() => {
+        fetch("http://localhost:3000/data/minsuKang/commentData.json", {
+            method: 'GET' ,
+        })
+        .then((res)=> res.json())
+        .then((data)=> {
+            setComment(data);
+        });
+    }, []);
+
     return(   
 <div className="Detail_container">
                      <div>
@@ -78,7 +92,16 @@ function Detail(){
                             <h2>리뷰</h2>
                         </div>
                         <div className="Detail_reple">
-                            <div>
+                            {comment.map((comment, index) => {
+                                return(
+                                    <Comment
+                                        author ={comment.author}
+                                        comment={comment.comment}
+                                        key={index}
+                                        />
+                                );
+                            })}
+                            {/* <div>
                             <h3>ilove_coffee</h3> <span>너무 귀엽다. 진짜~ 맛도 굿 굿</span>    
                             </div>
                             <div>
@@ -86,7 +109,7 @@ function Detail(){
                             </div>
                             <div>
                             <h3>cfmaster</h3> <span>지금까지 이런 귀여움과 맛은 없었다. 이것은 커피인가? 작품인가?</span>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="riple_input">
                             <input  type="text" placeholder="리뷰를 입력해주세요." />

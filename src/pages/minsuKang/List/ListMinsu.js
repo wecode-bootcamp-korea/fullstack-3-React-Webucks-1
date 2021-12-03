@@ -1,9 +1,21 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "./List.scss"
 import { Link } from "react-router-dom";
 import TopNav from "../component/TopNav";
+import CoffeCard from "../CoffeeCard/CoffeeCard";
 
 function List(){
+    const [coffeeList, setCoffeeList] = useState([]);
+
+    useEffect(() => {
+        fetch("http://localhost:3000/data/minsuKang/listData.json", {
+            method: 'GET' ,
+        })
+        .then((res)=> res.json())
+        .then((data)=> {
+            setCoffeeList(data);
+        });
+    }, []);
     return(
     <div className="List_container">
                 <div>
@@ -25,10 +37,25 @@ function List(){
                     <ul className="List_decaf1">디카페인 에스프레소 샷 추가 가능(일부 음료 제외)</ul>
                 </div>
             
-
                 <div className="List_coffee_image">
+                    {coffeeList[0] && coffeeList[0].map((coffee, index)=> {
+                    return(
+                        <CoffeCard
+                            src={coffee.imgSrc}
+                            content={coffee.content}
+                            key={index}
+                            />
+                    );
+                    })}
+                </div>
+
+
+
+            {/* <div className="List_coffee_image">
                         <div className="image">
-                            <li><img src="https://cdn.pixabay.com/photo/2017/09/03/15/45/iced-coffee-2710815_1280.jpg" alt="바닐라 커피"/></li>  
+                            <div className="image_container">                          
+                                <img src="https://cdn.pixabay.com/photo/2017/09/03/15/45/iced-coffee-2710815_1280.jpg" alt="바닐라 커피"/>
+                            </div>
                             <h3>콜드 브루</h3>
                         </div>
                         
@@ -81,7 +108,7 @@ function List(){
                             <h3>초코 콜드 브루</h3>
                         </div> 
                 </div>
-                
+                 */}
                 
 
                 <div className="List_wrapper2">
@@ -116,7 +143,7 @@ function List(){
                     </div>
                 </section>        */}
 
-                <div className="List_coffee_image">
+                {/* <div className="List_coffee_image">
                         <div className="image">
                             <img src="https://images.pexels.com/photos/4110874/pexels-photo-4110874.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="스페셜 브루"/>   
                             <h3>스페셜 브루</h3>
@@ -126,7 +153,18 @@ function List(){
                             <img src="https://images.pexels.com/photos/1006297/pexels-photo-1006297.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="크림 라떼"/>
                             <h3>크림 라떼</h3>
                         </div> 
-                </div>       
+                </div>        */}
+                <div className="List_coffee_image">
+                    {coffeeList[1] && coffeeList[1].map((coffee, index)=> {
+                    return(
+                        <CoffeCard
+                            src={coffee.imgSrc}
+                            content={coffee.content}
+                            key={index}
+                            />
+                    );
+                    })}
+                </div>
     </div>
     )
 }
