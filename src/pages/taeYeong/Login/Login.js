@@ -2,8 +2,30 @@ import React, { useState } from 'react';
 import './Login.scss';
 
 function Login() {
-  const [idInput, setIdInput] = useState();
-  const [pwInput, setPwInput] = useState();
+  const [idInput, setIdInput] = useState('');
+  const [pwInput, setPwInput] = useState('');
+
+  const handleIdInput = (e) => {
+    setIdInput(e.target.value);
+  };
+
+  const handlePwInput = (e) => {
+    setPwInput(e.target.value);
+  };
+
+  const validationId = (id) => {
+    if (id.includes('@')) {
+      return true;
+    }
+    return false;
+  };
+
+  const validationPw = (pw) => {
+    if (pw.length >= 5) {
+      return true;
+    }
+    return false;
+  };
 
   return (
     <div className="login">
@@ -15,7 +37,7 @@ function Login() {
               type="text"
               id="user-id"
               placeholder="전화번호, 사용자 이름 또는 이메일"
-              onChange={handleIdInput.bind(this, setIdInput)}
+              onChange={handleIdInput}
             />
           </div>
           <div className="login-input">
@@ -23,7 +45,7 @@ function Login() {
               type="password"
               id="user-pw"
               placeholder="비밀번호"
-              onChange={handlePwInput.bind(this, setPwInput)}
+              onChange={handlePwInput}
             />
             <button type="button" id="user-pw__btn">
               show
@@ -50,29 +72,5 @@ function Login() {
     </div>
   );
 }
-
-const a = 1;
-
-const handleIdInput = (setIdInput, e) => {
-  setIdInput(e.target.value);
-};
-
-const handlePwInput = (setPwInput, e) => {
-  setPwInput(e.target.value);
-};
-
-const validationId = (id) => {
-  if (String(id).includes('@')) {
-    return true;
-  }
-  return false;
-};
-
-const validationPw = (pw) => {
-  if (pw.length >= 5) {
-    return true;
-  }
-  return false;
-};
 
 export default Login;

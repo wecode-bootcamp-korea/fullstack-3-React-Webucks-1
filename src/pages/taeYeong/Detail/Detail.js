@@ -12,10 +12,9 @@ function Detail() {
 
   const commentOnChange = (e) => {
     if (e.key === 'Enter') {
-      comments.push(e.target.value);
+      comments.push({ content: e.target.value, heart: false });
       setComments([...comments]);
       e.target.value = '';
-      console.log(comments);
     }
   };
 
@@ -114,7 +113,16 @@ function Detail() {
                     })}
 
                     {comments.map((comment, index) => {
-                      return <Comment commentInput={comment} key={index} />;
+                      return (
+                        <Comment
+                          comments={comments}
+                          setComments={setComments}
+                          commentIndex={index}
+                          content={comment.content}
+                          heart={comment.heart}
+                          key={index}
+                        />
+                      );
                     })}
                   </div>
                   <input
