@@ -24,7 +24,6 @@ function Comment(props) {
         onClick={(e) => {
           props.comments.splice(props.commentIndex, 1);
           props.setComments([...props.comments]);
-          // setHeart('');
         }}
       ></i>
     </div>
