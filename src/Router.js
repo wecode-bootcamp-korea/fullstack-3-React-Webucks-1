@@ -21,7 +21,7 @@ function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login-minsu" element={<LoginMinsu />} />
+        <Route path="/" element={<LoginMinsu />} />
         <Route path="/list-minsu" element={<ListMinsu />} />
         <Route path="/detail-minsu" element={<DetailMinsu />} />
         <Route path="/login-eunbi" element={<LoginEunbi />} />

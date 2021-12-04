@@ -1,7 +1,7 @@
 .List_container {
   box-sizing: border-box;
-  margin: auto;
-  background-color: #ebeff3;
+  background-color: white;
+  margin-left: 100px;
   @media all and (min-width: 768px) and (max-width: 1080px) {
   }
 
@@ -9,7 +9,7 @@
     border: 1px solid black;
     border-style: none;
     height: 75px;
-    width: 92%;
+    width: 94%;
     background-color: #f6f5f0;
 
     .logo {
@@ -19,6 +19,7 @@
       float: left;
       background-color: #f6f5f0;
       margin-left: 40px;
+      margin-top: 1px;
     }
 
     .nav {
@@ -39,7 +40,7 @@
   }
   .List_wrapper2 {
     border: 1px solid black;
-    width: 92%;
+    width: 94%;
     height: 75px;
     background-color: #f6f5f0;
     margin-top: 20px;
@@ -63,7 +64,7 @@
     background-color: #f6f5f0;
     display: inline;
     margin-left: -20px;
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   .List_decaf1 {

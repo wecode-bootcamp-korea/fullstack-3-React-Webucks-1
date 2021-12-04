@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import css from "./Login.module.css";
+import "./Login.scss";
 import {useNavigate} from "react-router-dom";
 
 
@@ -7,29 +7,36 @@ import {useNavigate} from "react-router-dom";
 
 function Login(){
     const navigate = useNavigate();
-    const goToList = () => {navigate("/List");};
-    const [userid, setUserId] = useState("")
-    const [userpw, setUserPw] = useState("") //이처럼 usestate를 통해 state를 정해줘야만 값이 저장된다. 
-
+    const [userId, setUserId] = useState("")
+    const [userPw, setUserPw] = useState("") //이처럼 usestate를 통해 state를 정해줘야만 값이 저장된다. 
+    const [active, setActive] = useState(false)
     const handleIdInput = (e)=>{
         setUserId(e.target.value);// 여기서 잘 못 생각한 부분: userid라는 것이 결국에는 검출되는 것이므로. 함수과정을 거치면서 변화된다는 생각을 못함.
     };
     const handlePwInput = (e)=>{
-        setUserPw(e.target.value);
+        setUserPw(e.target.value);   
     }
+    const goToList = () => {if (userId.includes('@')&& userPw.length>5){
+    navigate("/list-minsu");}
+    else {alert("회원이 아니군요!");}}// 구현은 되나, 현재 로그인 화면으로 리로드가 안 되고 있음. 다른 추가적인 장치가 필요해 보인다. 
+    
+    const activeLogin = ()=> { return userId.includes('@') && userPw.length>5 ? setActive(true) : setActive(false);}
     return(
-        <div className={css.wrapper}>
-            <p className={css.logo}>WeBucks</p>
-            <form  action="submit" className={css.button1}>
-                <input  id= "id" className={css.id} type="text" placeholder="전화번호, 사용자 이름 또는 이메일" onChange={handleIdInput}/>
-                <input  id ="pw" className={css.pw} type="password" placeholder="비밀번호" onChange={handlePwInput}/>
-                <button id="loginbt" type="submit" className={css.login} onClick={goToList}>로그인</button>
-            </form> 
-            <div className={css.key1}>
-                <a href="https://www.starbucks.co.kr" id={css.s}>비밀번호를 잊으셨나요?</a>
-            </div>
+    <div className="Login_container">
+        <div className="Login_wrapper">
+                <p className="Login_logo">WeBucks</p>
+                <form  action="submit" className="Login_button1">
+                    <input  id= "id" className="Login_id" type="text" placeholder="전화번호, 사용자 이름 또는 이메일" onKeyUp= {activeLogin} onChange={handleIdInput}/>
+                    <input  id ="pw" className="Login_pw" type="password" placeholder="비밀번호"onKeyUp= {activeLogin} onChange={handlePwInput}/>
+                    <button id="Login_bt" type="button" className={active ? 'activeLoginBtn'  : 'loginBtn' } onClick={goToList}
+                    disabled={(userId === '' || ! userId.includes('@')) || (userPw === '' || userPw.length<5) ? true : false}>로그인</button>
+                </form> 
+                <div className="Login_key1">
+                    <a href="https://www.starbucks.co.kr" id="Login_s">비밀번호를 잊으셨나요?</a>
+                </div>
             
-        </div>   
+        </div>
+    </div>        
     );
 }
 
