@@ -1,6 +1,6 @@
 import React from "react";
-import "../../../styles/reset.css"
-import "./List.css";
+import "../../../styles/reset.scss"
+import "./List.scss";
 
 const List = (beerData) => {
   return (
