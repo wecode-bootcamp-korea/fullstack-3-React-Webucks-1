@@ -1,6 +1,5 @@
 import React from "react";
-import List from "../List/ListMinsu";
-import Detail from "../Detail/DetailMinsu"
+
 
 function TopNav(){
     return(                    
