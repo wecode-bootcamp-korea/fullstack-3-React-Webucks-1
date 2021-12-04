@@ -1,11 +1,11 @@
 import React from "react";
-import "../../../styles/reset.css"
-import "./Detail.css";
+import "../../../styles/reset.scss"
+import "./Detail.scss";
 
 const Detail = () => {
   return (
     <section className="detail-container">
-       <header className="inner-wrapper">
+      <header className="inner-wrapper">
         <h1>BeerBucks</h1>
         <nav>
           <ul className="nav-list">
