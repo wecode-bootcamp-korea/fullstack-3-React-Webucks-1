@@ -1,21 +1,13 @@
 import React from "react";
+import Nav from "../../../components/Nav/Nav";
 import "../../../styles/reset.scss"
 import "./List.scss";
+
 
 const List = (beerData) => {
   return (
     <div className="list-container">
-      <header className="inner-wrapper">
-        <h1>BeerBucks</h1>
-        <nav>
-          <ul className="nav-list">
-            <li><a className="nav-list-links" href="{#}">BEER</a></li>
-            <li><a className="nav-list-links" href="{#}">MENU</a></li>
-            <li><a className="nav-list-links" href="{#}">STORE</a></li>
-            <li><a className="nav-list-links" href="{#}">WHAT'S NEW</a></li>
-          </ul>
-        </nav>
-      </header>
+      <Nav />
       <section className="inner-wrapper draft-list-wrapper">
         <h2>
           드래프트 맥주 🍺 <span>논알콜 샷 추가 가능(일부 음료 제외)</span>

@@ -19,33 +19,6 @@ body{
     margin: 0 auto;
     width: 1200px;
     min-width: 500px;
-
-    header.inner-wrapper{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 20px;
-      background-color: #f4f4f2;
-
-      h1 {
-        margin: 20px 0;
-        font-family: 'Dancing Script', cursive;
-        font-size: 2rem;
-        font-weight: bolder;
-      }
-      
-      .nav-list {
-        display: flex;
-        justify-content: center;
-      }
-      
-      .nav-list-links {
-        margin: 0 10px;
-        letter-spacing: 2px;
-        text-align: center;
-        color: #333333;
-      }
-    }
   
     h2 {
       margin: 15px 0;

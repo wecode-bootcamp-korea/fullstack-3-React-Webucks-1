@@ -1,21 +1,12 @@
 import React from "react";
+import Nav from "../../../components/Nav/Nav"
 import "../../../styles/reset.scss"
 import "./Detail.scss";
 
 const Detail = () => {
   return (
     <section className="detail-container">
-      <header className="inner-wrapper">
-        <h1>BeerBucks</h1>
-        <nav>
-          <ul className="nav-list">
-            <li><a className="nav-list-links" href="{#}">BEER</a></li>
-            <li><a className="nav-list-links" href="{#}">MENU</a></li>
-            <li><a className="nav-list-links" href="{#}">STORE</a></li>
-            <li><a className="nav-list-links" href="{#}">WHAT'S NEW</a></li>
-          </ul>
-        </nav>
-      </header>
+      <Nav />
       <section className="inner-wrapper beer-category-wrapper">
         <h2>드래프트 맥주</h2>
         <nav>
