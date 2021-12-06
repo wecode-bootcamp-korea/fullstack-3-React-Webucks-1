@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../../styles/reset.scss"
 import "./Login.scss";
@@ -12,15 +12,17 @@ const Login = () => {
     setId(e.target.value)
   }
   
- function handlePwInput(e){
-   setPw(e.target.value)
- }
+  function handlePwInput(e){
+    setPw(e.target.value)
+  }
+
+  const validateLogin = userid && userpw ? (userid.includes('@') && userpw.length > 5) : false
 
   return (
     <div className="login-wrapper">
       <h1>BeerBucks</h1>
       <form className="login-form">
-        <div className="input-control">
+        <div className={ userid ? (userid.includes('@')? "validated input-control": "input-control") : "input-control"}>
           <label className="visually-hidden" for="username"></label>
           <input
             className="form-items"
@@ -31,7 +33,8 @@ const Login = () => {
             onChange={handleIdInput}
           />
         </div>
-        <div className="input-control password-input-control">
+        <div className=
+        { userpw ? (userpw.length > 5? "validated input-control password-input-control": "input-control password-input-control") : "input-control password-input-control"} >
           <label className="visually-hidden" for="password"></label>
           <input
             className="form-items"
@@ -49,8 +52,9 @@ const Login = () => {
           id="login-button"
           type="submit"
           disabled="true"
+          className={validateLogin ? "login-validated" : ""}
         >
-          로그인
+          로그인 {console.log(userid)}
         </button>
       </form>
       <Link className="lost-pw" to="/detail">
