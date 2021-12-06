@@ -35,7 +35,7 @@ body{
       grid-row-gap: 20px;
     }
     
-    .beer-list-item dt{
+    .beer-list-item .beer-image {
       overflow: hidden;
       width: 280px;
       height: 270px;
@@ -52,7 +52,8 @@ body{
       transform: scale(1.2)
     }
     
-    dd {
+    .beer-name {
+      display: block;
       padding: 10px;
       font-size: 1rem;
       text-align: center;
