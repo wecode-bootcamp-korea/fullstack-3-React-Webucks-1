@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Nav from "../../../components/Nav/Nav"
 import "../../../styles/reset.scss"
 import "./Detail.scss";
 
 const Detail = () => {
+  const [isFavorite, setFavorite] = useState(false);
+
+  const toggleHeart = () => {
+    setFavorite(!isFavorite)
+  }
+
   return (
     <section className="detail-container">
       <Nav />
@@ -49,7 +55,7 @@ const Detail = () => {
                 <h3>아이피에이</h3>
                 <span>Indian Pale Ale</span>
               </div>
-              <i className="far fa-heart fa-lg"></i>
+              <i className={ isFavorite? "fas fa-heart fa-2x is-favorite" : "far fa-heart fa-2x"} onClick={toggleHeart}></i>
             </div>
             <section className="detail-beer-description">
               <h4 className="visually-hidden">맛</h4>
