@@ -1,24 +1,63 @@
 {
   "cold": [
-    { "img": "/images/junhyeok/coffee1.png", "name": "토피 넛 콜드 브루" },
-    { "img": "/images/junhyeok/coffee2.png", "name": "나이트로 바닐라 크림" },
-    { "img": "/images/junhyeok/coffee3.png", "name": "나이트로 콜드 브루" },
-    { "img": "/images/junhyeok/coffee4.png", "name": "돌체 콜드 브루" },
-    { "img": "/images/junhyeok/coffee5.png", "name": "바닐라 크림 콜드 브루" },
     {
+      "id": "1",
+      "img": "/images/junhyeok/coffee1.png",
+      "name": "토피 넛 콜드 브루"
+    },
+    {
+      "id": "2",
+      "img": "/images/junhyeok/coffee2.png",
+      "name": "나이트로 바닐라 크림"
+    },
+    {
+      "id": "3",
+      "img": "/images/junhyeok/coffee3.png",
+      "name": "나이트로 콜드 브루"
+    },
+    {
+      "id": "4",
+      "img": "/images/junhyeok/coffee4.png",
+      "name": "돌체 콜드 브루"
+    },
+    {
+      "id": "5",
+      "img": "/images/junhyeok/coffee5.png",
+      "name": "바닐라 크림 콜드 브루"
+    },
+    {
+      "id": "6",
       "img": "/images/junhyeok/coffee6.png",
       "name": "벨벳 다크 모카 나이트로"
     },
     {
+      "id": "7",
       "img": "/images/junhyeok/coffee7.png",
       "name": "시그니처 더 블랙 콜드 브루"
     },
-    { "img": "/images/junhyeok/coffee8.png", "name": "제주 비자림 콜드 브루" },
-    { "img": "/images/junhyeok/coffee9.png", "name": "콜드 브루" },
-    { "img": "/images/junhyeok/coffee10.png", "name": "콜드 브루 몰트" },
-    { "img": "/images/junhyeok/coffee11.png", "name": "콜드 브루 오트 라떼" },
-    { "img": "/images/junhyeok/coffee12.png", "name": "콜드 브루 플로트" },
     {
+      "id": "8",
+      "img": "/images/junhyeok/coffee8.png",
+      "name": "제주 비자림 콜드 브루"
+    },
+    { "id": "9", "img": "/images/junhyeok/coffee9.png", "name": "콜드 브루" },
+    {
+      "id": "10",
+      "img": "/images/junhyeok/coffee10.png",
+      "name": "콜드 브루 몰트"
+    },
+    {
+      "id": "11",
+      "img": "/images/junhyeok/coffee11.png",
+      "name": "콜드 브루 오트 라떼"
+    },
+    {
+      "id": "12",
+      "img": "/images/junhyeok/coffee12.png",
+      "name": "콜드 브루 플로트"
+    },
+    {
+      "id": "13",
       "img": "/images/junhyeok/coffee13.png",
       "name": "프렌치 애플 타르트 나이트로"
     }

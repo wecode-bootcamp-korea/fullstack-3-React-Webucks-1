@@ -1,24 +1,25 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import "./Detail.scss";
+import React, { useState } from 'react';
+import { Nav, BottomBar } from '../Component/NavAndBottom';
+import ReviewComment from '../Component/ReviewComment';
+import './Detail.scss';
 
 function Detail() {
   let [inputText, setinputText] = useState([]);
-  let [like, setlike] = useState("🤍");
-
+  let [like, setlike] = useState('🤍');
   // 댓글 입력창 누를때
   let pressEnterEvent = (e) => {
-    if (e.keyCode === 13) {
+    if (e.keyCode === 13 && e.target.value.length > 0) {
       let copy = [...inputText];
-      copy.push(e.target.value);
+      copy.push([e.target.value, '🤍']);
       setinputText(copy);
-      e.target.value = "";
+      e.target.value = '';
     }
   };
 
   return (
     <div className="junhyeok">
       <Nav />
+      {console.log(inputText)}
       <div className="container">
         <h2>콜드 브루</h2>
         <div className="detail-img">
@@ -29,7 +30,7 @@ function Detail() {
           <span
             className="like"
             onClick={() => {
-              like === "🤍" ? setlike("❤️") : setlike("🤍");
+              like === '🤍' ? setlike('❤️') : setlike('🤍');
             }}
           >
             {like}
@@ -51,6 +52,7 @@ function Detail() {
           <div className="알러지">알레르기 유발 요인 : 우유</div>
           <div className="review">
             <h2>리뷰</h2>
+            {/* 댓글배열 map돌리기 */}
             <div className="comment">
               {inputText.map((e, i) => {
                 return (
@@ -64,7 +66,9 @@ function Detail() {
                 );
               })}
             </div>
+            {/* input에 이벤트 */}
             <input
+              maxLength="55"
               placeholder="리뷰를 입력해주세요."
               id="commentInput"
               type="text"
@@ -98,109 +102,6 @@ function Division() {
         <p>345</p>
       </div>
     </div>
-  );
-}
-//하단바
-function BottomBar() {
-  return (
-    <div className="bottom-bar">
-      <div className="bottom-bar-section">
-        <p>COMPANY</p>
-        <ul>
-          <li>한눈에 보기</li>
-          <li>스타벅스 사명</li>
-          <li>스타벅스 소개</li>
-          <li>국내 뉴스룸</li>
-          <li>세계의 스타벅스</li>
-          <li>글로벌 뉴스룸</li>
-        </ul>
-      </div>
-      <div className="bottom-bar-section">
-        <p>CORPORATE SALES</p>
-        <ul>
-          <li>단체 및 기업 구매 안내</li>
-        </ul>
-      </div>
-      <div className="bottom-bar-section">
-        <p>PARTNERSHIP</p>
-        <ul>
-          <li>신규 입점 제의</li>
-          <li>협력 고객사 등록 신청</li>
-        </ul>
-      </div>
-      <div className="bottom-bar-section">
-        <p>ONLINE COMMUNITY</p>
-        <ul>
-          <li>페이스북</li>
-          <li>트위터</li>
-          <li>유뷰트</li>
-          <li>블로그</li>
-          <li>인스타그램</li>
-        </ul>
-      </div>
-      <div className="bottom-bar-section">
-        <p>RECRUIT</p>
-        <ul>
-          <li>채용소개</li>
-          <li>채용 지원하기</li>
-        </ul>
-      </div>
-      <div className="bottom-bar-section">
-        <p>WEBUCKS</p>
-      </div>
-    </div>
-  );
-}
-//댓글기능
-function ReviewComment(props) {
-  let [like, setlike] = useState("🤍");
-  return (
-    <div className="commentBox">
-      <span className="commentText">
-        <b>{sessionStorage.getItem("id")}</b> : {props.text}
-        <span
-          className="likeBtn"
-          onClick={() => {
-            like === "🤍" ? setlike("❤️") : setlike("🤍");
-          }}
-        >
-          {like}
-        </span>
-      </span>
-      {/* 삭제버튼 */}
-      <button
-        className="deleteBtn"
-        onClick={(e) => {
-          e.target.parentElement.remove();
-          // let deepcopy = JSON.parse(JSON.stringify(props.inputText));
-          // deepcopy.splice(props.index, 1);
-          // props.setinputText(deepcopy);
-        }}
-      >
-        삭제
-      </button>
-    </div>
-  );
-}
-function Nav() {
-  return (
-    <header>
-      <div className="nav">
-        <h3>WeBucks</h3>
-        <ul>
-          <li>
-            <Link to="/Detail-junhyeok">Detail</Link>
-          </li>
-          <li>
-            <Link to="/List-junhyeok">MENU</Link>
-          </li>
-          <li>STORE</li>
-          <li>
-            <Link to="/login-junhyeok">Login</Link>
-          </li>
-        </ul>
-      </div>
-    </header>
   );
 }
 
