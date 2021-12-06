@@ -4,11 +4,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
 import TopNav from "../component/TopNav";
 import Comment from "../Comment/Comment";
-
+import LikeButton from "../LikeButton/LikeButton";
+import Reply from "../Reply/Reply";
 
 function Detail(){
-    const [comment,setComment] = useState([]);
-
+    const [comment, setComment] = useState([])
+    
     useEffect(() => {
         fetch("http://localhost:3000/data/minsuKang/commentData.json", {
             method: 'GET' ,
@@ -19,23 +20,26 @@ function Detail(){
         });
     }, []);
 
+    const [inputText, setInputText] = useState([]);
+    const pressEnterEvent = (e) => {
+        if (e.keyCode === 13 && e.target.value.length !== 0) {
+          e.preventDefault();
+          let copy = [...inputText];
+          copy.push(e.target.value);
+          setInputText(copy);
+          e.target.value = "";
+        }};
+
+
+
+
+
     return(   
 <div className="Detail_container">
-                     <div>
-                     <TopNav/>
+                    <div>
+                        <TopNav/>
                     </div>
-                    {/* <div className="Detail_wrapper">
-                        <h1 className="Detail_logo">WeBucks</h1>
-                        <div className="Detail_nav">
-                            <ul className="coffee">COFFEE</ul>
-                            <ul className="menu">MENU</ul>
-                            <ul className="store">STORE</ul>
-                            <ul className="what">WHAT'S NEW</ul>   
-                        </div>
-                    </div>  */}
-                    
                     <h1 className="Detail_big_name">콜드 브루</h1>
-                    
                     <div className="Detail_top_menu">
                         <ul>홈&gt;MENU&gt;음료&gt;에스프레소&gt;캐릭터 라떼</ul>
                     </div>
@@ -48,7 +52,7 @@ function Detail(){
                         <div className="Detail_menu_box1">
                             <h2>캐릭터 라떼</h2>
                             <h5>Character latte</h5>
-                            <FontAwesomeIcon icon={regularHeart} className="top_heart" />
+                            <LikeButton/>
                         </div>
 
                         <div className="Detail_menu_box2">
@@ -97,12 +101,12 @@ function Detail(){
                                     <Comment
                                         author ={comment.author}
                                         comment={comment.comment}
-                                        key={index}
+                                        key={index}    
                                         />
                                 );
                             })}
-                            {/* <div>
-                            <h3>ilove_coffee</h3> <span>너무 귀엽다. 진짜~ 맛도 굿 굿</span>    
+                        </div>
+                            {/* {<h3>ilove_coffee</h3> <span>너무 귀엽다. 진짜~ 맛도 굿 굿</span>    
                             </div>
                             <div>
                             <h3>cha077</h3> <span>위벅스에서만 먹는 특별 시즌 한정 캐릭터 라떼 꼭 드십셔~</span>
@@ -110,13 +114,26 @@ function Detail(){
                             <div>
                             <h3>cfmaster</h3> <span>지금까지 이런 귀여움과 맛은 없었다. 이것은 커피인가? 작품인가?</span>
                             </div> */}
-                        </div>
-                        <div className="riple_input">
-                            <input  type="text" placeholder="리뷰를 입력해주세요." />
-                        </div>
-
-                    </div>
-            </div>
+                        <form className="riple_input">        
+                            {/* <div>
+                                <Reply/>
+                            </div> */}
+                            
+                        {inputText.map((e, index) => {
+                                return(
+                                <Comment 
+                                        setInputText={setInputText}
+                                        text={inputText}
+                                        comment={e}
+                                        key={index}    
+                                        />
+                                
+                                );
+                            })}
+                            <input className="reply_input" onKeyDown={(e) => { pressEnterEvent(e); }} text="text" placeholder="리뷰를 입력해주세요."/>
+                        </form>
+                </div>
+</div>
 
         <div className="footer">
                 <div class="menu1">

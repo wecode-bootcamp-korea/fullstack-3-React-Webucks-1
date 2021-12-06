@@ -6,7 +6,6 @@ import CoffeCard from "../CoffeeCard/CoffeeCard";
 
 function List(){
     const [coffeeList, setCoffeeList] = useState([]);
-
     useEffect(() => {
         fetch("http://localhost:3000/data/minsuKang/listData.json", {
             method: 'GET' ,

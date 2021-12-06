@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import CommentInput from "./pages/minsuKang/Reply/Reply";
 import LoginMinsu from "./pages/minsuKang/Login/LoginMinsu";
 import ListMinsu from "./pages/minsuKang/List/ListMinsu";
 import DetailMinsu from "./pages/minsuKang/Detail/DetailMinsu";
@@ -21,7 +21,7 @@ function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LoginMinsu />} />
+        <Route path="/" element={<LoginMinsu/>} />
         <Route path="/list-minsu" element={<ListMinsu />} />
         <Route path="/detail-minsu" element={<DetailMinsu />} />
         <Route path="/login-eunbi" element={<LoginEunbi />} />

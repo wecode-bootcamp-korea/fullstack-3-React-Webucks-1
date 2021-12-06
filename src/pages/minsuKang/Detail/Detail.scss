@@ -68,7 +68,6 @@
     }
     .Detail_box1 {
       width: 670px;
-      height: 600px;
       .Detail_menu_box1 {
         border-bottom: 3px solid black;
         width: 670px;
@@ -79,7 +78,7 @@
           float: right;
           margin-top: -90px;
           margin-right: 20px;
-          color: rgb(212 211 205);
+          color: rgb(208 208 208);
         }
       }
       .Detail_menu_box2 {
@@ -188,8 +187,8 @@
       }
     }
     .riple_input {
-      margin-top: 50px;
-      color: rgb(246 245 240);
+      margin-top: 0px;
+      color: black;
 
       input {
         border: 3px solid rgb(246 245 240) k;
@@ -199,6 +198,9 @@
         border: none;
         font-size: 15px;
         background-color: rgb(214 214 214);
+      }
+      .reply_input {
+        color: black;
       }
     }
   }
