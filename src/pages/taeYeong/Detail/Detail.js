@@ -10,11 +10,13 @@ function Detail() {
 
   const [comments, setComments] = useState([]);
 
-  console.log(comments);
-
   const commentOnChange = (e) => {
     if (e.key === 'Enter') {
-      comments.push({ content: e.target.value, heart: false });
+      comments.push({
+        content: e.target.value,
+        author: 'dev.Taeyeong',
+        heart: false,
+      });
       setComments([...comments]);
       e.target.value = '';
     }

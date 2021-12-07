@@ -7,13 +7,12 @@ function Comment(props) {
   return (
     <div className="nutrition-info__review-comment__inner">
       <p>
-        <span>{props.author ? props.author : 'dev.Taeyeong'}</span>
+        <span>{props.author}</span>
         {props.content}
       </p>
       <i
         className={props.heart === true ? 'fas fa-heart' : 'far fa-heart'}
         onClick={() => {
-          console.log(arr[props.commentIndex]);
           arr[props.commentIndex].heart = !arr[props.commentIndex].heart;
           props.setComments([...arr]);
         }}

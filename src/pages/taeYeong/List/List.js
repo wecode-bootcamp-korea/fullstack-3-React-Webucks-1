@@ -69,7 +69,6 @@ function List() {
             })}
         </ul>
       </section>
-      {/* <script src="./js/list.js"></script> */}
     </div>
   );
 }
