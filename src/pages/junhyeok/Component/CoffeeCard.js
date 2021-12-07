@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
-function CoffeeCard(props) {
+function CoffeeCard({ item }) {
   let [like, setlike] = useState('🤍');
   return (
     <div className="add">
-      <img src={props.item.img} alt={props.item.name} />
+      <img src={item.img} alt={item.name} />
       <div className="name">
-        <h4>{props.item.name}</h4>
+        <h4>{item.name}</h4>
         <span
           className="like"
           onClick={() => {
