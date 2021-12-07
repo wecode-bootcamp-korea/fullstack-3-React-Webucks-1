@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import "./Comment.scss";
 
 function Comment(props) {
@@ -7,5 +7,6 @@ function Comment(props) {
     <div className="reply_box">
       <h3>{props.author ? props.author : (sessionStorage.getItem("id"))}</h3> <span>{props.comment}</span>    
     </div>
-  )}
+  )
+}
 export  default Comment;
