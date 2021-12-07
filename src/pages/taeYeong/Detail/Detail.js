@@ -106,16 +106,6 @@ function Detail() {
                 <div className="nutrition-info__review">
                   <h3>리뷰</h3>
                   <div className="nutrition-info__review-comment">
-                    {/* {commentsMock.map((commentMock, index) => {
-                      return (
-                        <Comment
-                          content={commentMock.comment}
-                          author={commentMock.author}
-                          key={index}
-                        />
-                      );
-                    })} */}
-
                     {comments.map((comment, index) => {
                       return (
                         <Comment

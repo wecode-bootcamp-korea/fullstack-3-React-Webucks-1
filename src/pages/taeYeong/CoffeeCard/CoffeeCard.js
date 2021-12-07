@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 
-function CoffeeCard(props) {
+function CoffeeCard({ src, content }) {
   const [heart, setHeart] = useState(false);
   return (
-    <li>
+    <li className="coffee-card">
       <div className="coffee-list__box">
-        <img src={props.src} alt="커피" width="200px" height="200px" />
+        <img src={src} alt="커피" width="200px" height="200px" />
       </div>
       <p>
-        {props.content}
+        {content}
         <i
           className={heart === true ? 'fas fa-heart' : 'far fa-heart'}
           onClick={() => setHeart(!heart)}

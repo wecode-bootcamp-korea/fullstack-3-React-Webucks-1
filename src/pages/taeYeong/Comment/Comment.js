@@ -1,30 +1,37 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-function Comment(props) {
-  // const [heart, setHeart] = useState(false);
-  const arr = props.comments;
+function Comment({
+  comments,
+  setComments,
+  commentIndex,
+  author,
+  content,
+  heart,
+}) {
+  const arr = comments;
 
   return (
-    <div className="nutrition-info__review-comment__inner">
-      <p>
-        <span>{props.author}</span>
-        {props.content}
-      </p>
-      <i
-        className={props.heart === true ? 'fas fa-heart' : 'far fa-heart'}
-        onClick={() => {
-          arr[props.commentIndex].heart = !arr[props.commentIndex].heart;
-          props.setComments([...arr]);
-        }}
-        key={props.index}
-      ></i>
-      <i
-        className="fas fa-times"
-        onClick={(e) => {
-          props.comments.splice(props.commentIndex, 1);
-          props.setComments([...props.comments]);
-        }}
-      ></i>
+    <div className="comment">
+      <div className="nutrition-info__review-comment__inner">
+        <p>
+          <span>{author}</span>
+          {content}
+        </p>
+        <i
+          className={heart === true ? 'fas fa-heart' : 'far fa-heart'}
+          onClick={() => {
+            arr[commentIndex].heart = !arr[commentIndex].heart;
+            setComments([...arr]);
+          }}
+        ></i>
+        <i
+          className="fas fa-times"
+          onClick={(e) => {
+            comments.splice(commentIndex, 1);
+            setComments([...comments]);
+          }}
+        ></i>
+      </div>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './Login.scss';
 
@@ -31,7 +31,7 @@ function Login() {
 
   return (
     <div className="login">
-      <section id="login">
+      <section id="login-box">
         <h1 className="login-title">WeBucks</h1>
         <form>
           <div className="login-input">
