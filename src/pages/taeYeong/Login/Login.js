@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Route, Link } from 'react-router-dom';
+
 import './Login.scss';
 
 function Login() {
@@ -52,15 +54,17 @@ function Login() {
             </button>
           </div>
           <div>
-            <button
-              type="button"
-              className="login-button"
-              disabled={
-                validationId(idInput) && validationPw(pwInput) ? false : true
-              }
-            >
-              로그인
-            </button>
+            <Link to="/list-taeyeong">
+              <button
+                type="button"
+                className="login-button"
+                disabled={
+                  validationId(idInput) && validationPw(pwInput) ? false : true
+                }
+              >
+                로그인
+              </button>
+            </Link>
           </div>
         </form>
         <div>
