@@ -22,7 +22,7 @@ const Login = () => {
     <div className="login-wrapper">
       <h1>BeerBucks</h1>
       <form className="login-form">
-        <div className={ userid ? (userid.includes('@')? "validated input-control": "input-control") : "input-control"}>
+        <div className={`input-control ${userid && userid.includes('@')? "validated": ""}`}>
           <label className="visually-hidden" for="username"></label>
           <input
             className="form-items"
@@ -33,8 +33,8 @@ const Login = () => {
             onChange={handleIdInput}
           />
         </div>
-        <div className=
-        { userpw ? (userpw.length > 5? "validated input-control password-input-control": "input-control password-input-control") : "input-control password-input-control"} >
+        <div className= {`input-control password-input-control 
+          ${userpw && userpw.length > 5? "validated": ""}`}>
           <label className="visually-hidden" for="password"></label>
           <input
             className="form-items"
@@ -54,6 +54,7 @@ const Login = () => {
           disabled="true"
           className={validateLogin ? "login-validated" : ""}
         >
+        로그인
         </button>
       </form>
       <Link className="lost-pw" to="/detail">
