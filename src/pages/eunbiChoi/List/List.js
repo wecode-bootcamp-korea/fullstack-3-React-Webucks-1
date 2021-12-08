@@ -29,7 +29,7 @@ const List = () => {
               .map(draft => <BeerCard 
                 beer={draft} 
                 key={draft.id} 
-                alt={draft.name} 
+                name={draft.name} 
                 src={draft.url}/>
               )
             }
@@ -46,7 +46,7 @@ const List = () => {
               .map(bottled => <BeerCard 
                 beer={bottled} 
                 key={bottled.id} 
-                alt={bottled.name} 
+                name={bottled.name} 
                 src={bottled.url}/>
               )
             }

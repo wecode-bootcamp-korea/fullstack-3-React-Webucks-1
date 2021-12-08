@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const BeerCard = ({beer, key, alt, src}) => {
+const BeerCard = ({beer, key, name, src}) => {
   return (
     <li className="beer-list-item" key={key}>
       <div className="beer-image">
@@ -9,12 +9,12 @@ const BeerCard = ({beer, key, alt, src}) => {
           <img
             className="beer-img"
             src={src}
-            alt={alt} loading="lazy"
+            alt={name} loading="lazy"
           />
         </Link>
       </div>
       <figcaption className="beer-name">
-        {beer.name}
+        {name}
         <i className="fas is-favorite fa-heart fa-lg"></i>
       </figcaption>
     </li>

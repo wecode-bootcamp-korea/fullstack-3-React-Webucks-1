@@ -54,7 +54,6 @@ const Login = () => {
           disabled="true"
           className={validateLogin ? "login-validated" : ""}
         >
-          로그인 {console.log(userid)}
         </button>
       </form>
       <Link className="lost-pw" to="/detail">
