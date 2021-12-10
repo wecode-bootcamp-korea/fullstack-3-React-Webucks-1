@@ -6,9 +6,25 @@
 주제: React 를 사용한 위벅스 프로젝트
 기간: 2021.12.01-2021.12.10
 
-![로그인 페이지 이미지](https://user-images.githubusercontent.com/87692499/144550972-19eb1802-ba10-47a6-84b1-7d7ccc5b151a.gif)
-리스트 페이지 이미지
-디테일 페이지 이미지
+- 로그인 페이지
+ 
+![ezgif com-gif-maker (8)](https://user-images.githubusercontent.com/87692499/143394553-1ac46c1b-bc82-46d1-ad14-4f8a29596d86.gif)
+
+<br>
+
+- 리스트 페이지
+
+![ezgif com-gif-maker (9)](https://user-images.githubusercontent.com/87692499/143396714-12a79fe0-3c36-438a-92d3-20ef94085a96.gif)
+
+<br>
+
+- 디테일 페이지
+
+![127 0 0 1_5500_detail html](https://user-images.githubusercontent.com/87692499/143276081-37e94326-4538-43c8-be76-f9ff2ca9ffd1.png)
+
+![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/87692499/143293356-eb2a920b-aeac-4df0-8c34-5ff7f29e3226.gif)
+
+![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/87692499/143296577-92636995-044b-4761-bc1c-8844fb500333.gif)
 
 <br>
 
@@ -39,7 +55,7 @@
 
 - **이준혁** : ㅎㅎㅎㅎ
 - 
-- **정태영**
+- **정태영** : ㅎ2ㅎ2
 
 - **박준홍**
 
