@@ -1,19 +1,38 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "../../../styles/reset.scss"
+import "../../../styles/reset.scss";
 import "./Login.scss";
 
-
 const Login = () => {
-  const [userid, setId] = useState();
-  const [userpw, setPw] = useState();
+  const [userid, setUserId] = useState();
+  const [userpw, setUserPw] = useState();
   
   function handleIdInput(e){
-    setId(e.target.value)
+    setUserId(e.target.value)
   }
   
   function handlePwInput(e){
-    setPw(e.target.value)
+    setUserPw(e.target.value)
+  }
+
+  async function goLogin(e){
+    e.preventDefault()
+    const response = await fetch('/users/login', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        "email" : userid,
+        "password" : userpw,
+      }),
+    });
+
+    if (response.status === 200) {
+      const data = await response.json()
+      // localStorage.setItem('token', data.token)
+      sessionStorage.setItem('token', data.token)
+    }
   }
 
   const validateLogin = userid && userpw ? (userid.includes('@') && userpw.length > 5) : false
@@ -47,12 +66,13 @@ const Login = () => {
           <button className="password-button">show</button>
         </div>
         <button
-          tabindex="0"
-          formaction="list.html"
+          // tabindex="0"
+          // formaction="list.html"
           id="login-button"
           type="submit"
-          disabled="true"
+          // disabled="true"
           className={validateLogin ? "login-validated" : ""}
+          onClick={goLogin}
         >
         로그인
         </button>
