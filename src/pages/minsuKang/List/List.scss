@@ -1,0 +1,106 @@
+.List_container {
+  box-sizing: border-box;
+  background-color: white;
+  margin-left: 100px;
+  @media all and (min-width: 768px) and (max-width: 1080px) {
+  }
+
+  .TopNav_wrapper {
+    border: 1px solid black;
+    border-style: none;
+    height: 75px;
+    width: 94%;
+    background-color: #f6f5f0;
+
+    .logo {
+      font-family: 'Bree Serif', serif;
+      font-family: 'Dancing Script', cursive;
+      font-size: 40px;
+      float: left;
+      background-color: #f6f5f0;
+      margin-left: 40px;
+      margin-top: 1px;
+    }
+
+    .nav {
+      float: right;
+      display: flex;
+      flex-direction: row;
+      margin-top: 30px;
+      color: #d4d3ce;
+      margin-right: 50px;
+      ul {
+        background-color: #f6f5f0;
+        padding: 0px;
+        margin: 10px;
+        margin-bottom: -30px;
+        margin-top: 0px;
+      }
+    }
+  }
+
+  .List_wrapper2 {
+    border: 1px solid black;
+    width: 94%;
+    height: 75px;
+    background-color: #f6f5f0;
+    margin-top: 20px;
+    position: relative;
+    border: none;
+    ul {
+      float: left;
+      background-color: #f6f5f0;
+      display: inline;
+    }
+  }
+
+  .List_cold {
+    position: relative;
+    margin-top: 30px;
+  }
+  .List_coffee_icon {
+    position: relative;
+    height: 70%;
+    width: 5%;
+    background-color: #f6f5f0;
+    display: inline;
+    margin-left: -20px;
+    margin-top: 10px;
+  }
+
+  .List_decaf1 {
+    position: relative;
+    margin-left: -472px;
+    margin-top: 30px;
+    padding-left: 0;
+  }
+
+  .List_coffee_image {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 5px;
+    margin-top: 20px;
+    img {
+      width: 15rem;
+      height: 20rem;
+      transition: transform 0.3s;
+    }
+    li {
+      margin-left: -20px;
+    }
+
+    img:hover {
+      transform: scale(1.1);
+    }
+
+    .image_container {
+      width: 15rem;
+      height: 20rem;
+      overflow: hidden;
+    }
+    h3 {
+      margin-left: 75px;
+    }
+  }
+}

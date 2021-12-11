@@ -1,0 +1,14 @@
+.button {
+  cursor: pointer;
+  transition: transform 300ms ease;
+  position: absolute;
+  font-size: 50px;
+  margin-left: 600px;
+  margin-top: -90px;
+}
+.red {
+  color: red;
+}
+.button:hover {
+  transform: scale(1.1);
+}
