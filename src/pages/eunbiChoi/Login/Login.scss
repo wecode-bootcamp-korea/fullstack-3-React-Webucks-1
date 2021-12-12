@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Nanum+Gothic&display=swap');
+
+
+$border-style: 1px solid rgb(219, 219, 219);
+
+.Login {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 12px;
+
+  .visually-hidden{
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  .login-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    margin: 150px auto;
+    background-color: #fff;
+    border: $border-style;
+    border-radius: 1px;
+  
+    h1 {
+      margin: 40px 0;
+      font-family: 'Dancing Script', cursive;
+      font-size: 3rem;
+      font-weight: bolder;
+    }
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 80%;
+
+      .input-control {
+        padding: 8px;
+        margin-bottom: 5px;
+        border: $border-style;
+        border-radius: 3px;
+      }
+  
+      .input-control.validated {
+        border: 3px solid lightgreen;
+      }
+  
+      .form-items {
+        width: 100%;
+        border: none;
+      }
+  
+      input:focus {
+        outline: none;
+      }
+  
+      .password-input-control{
+        position: relative;
+      }
+  
+      .password-button {
+        position: absolute;
+        right: 2px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 149, 246, 1);
+        cursor: pointer;
+      }
+  
+      button {
+        padding: 7px;
+        background-color: rgba(0, 149, 246, 0.3);
+        border: 0;
+        border-radius: 3px;
+        color: #fff;
+        cursor: pointer;
+      }
+  
+      button.login-validated {
+        background: rgba(0, 149, 246, 1);
+      }
+    }
+
+    .lost-pw {
+      margin-top: 80px;
+      text-decoration: none;
+      font-weight: bolder;
+      color: #0095F6;
+      margin-bottom: 40px;
+    }
+  }
+}

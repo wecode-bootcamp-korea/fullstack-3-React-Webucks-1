@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Nanum+Gothic&display=swap");
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+
+* {
+  box-sizing: border-box;
+  font-family: 'montserrat', 'arial', 'georgia';
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.List{
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 12px;
+
+  .inner-wrapper {
+    margin: 0 auto;
+    width: 1200px;
+    min-width: 500px;
+
+    h2 {
+      margin: 15px 0;
+      padding: 20px;
+      background-color: #f4f4f2;
+      font-size: 1.2rem;
+      font-weight: bolder;
+    }
+    
+    .beer-list.grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+      grid-auto-flow: row;
+    }
+
+  } 
+}
