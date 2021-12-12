@@ -38,48 +38,50 @@ const Login = () => {
   const validateLogin = userid && userpw ? (userid.includes('@') && userpw.length > 5) : false
 
   return (
-    <div className="login-wrapper">
-      <h1>BeerBucks</h1>
-      <form className="login-form">
-        <div className={`input-control ${userid && userid.includes('@')? "validated": ""}`}>
-          <label className="visually-hidden" for="username"></label>
-          <input
-            className="form-items"
-            type="text"
-            name="username"
-            id="username"
-            placeholder="전화번호, 사용자 이름 또는 이메일"
-            onChange={handleIdInput}
-          />
-        </div>
-        <div className= {`input-control password-input-control 
-          ${userpw && userpw.length > 5? "validated": ""}`}>
-          <label className="visually-hidden" for="password"></label>
-          <input
-            className="form-items"
-            type="password"
-            name="password"
-            id="password"
-            placeholder="비밀번호"
-            onChange={handlePwInput}
-          />
-          <button className="password-button">show</button>
-        </div>
-        <button
-          // tabindex="0"
-          // formaction="list.html"
-          id="login-button"
-          type="submit"
-          // disabled="true"
-          className={validateLogin ? "login-validated" : ""}
-          onClick={goLogin}
-        >
-        로그인
-        </button>
-      </form>
-      <Link className="lost-pw" to="/detail">
-        비밀번호를 잊으셨나요?
-      </Link>
+    <div className="Login">
+      <div className="login-wrapper">
+        <h1>BeerBucks</h1>
+        <form className="login-form">
+          <div className={`input-control ${userid && userid.includes('@')? "validated": ""}`}>
+            <label className="visually-hidden" for="username"></label>
+            <input
+              className="form-items"
+              type="text"
+              name="username"
+              id="username"
+              placeholder="전화번호, 사용자 이름 또는 이메일"
+              onChange={handleIdInput}
+            />
+          </div>
+          <div className= {`input-control password-input-control 
+            ${userpw && userpw.length > 5? "validated": ""}`}>
+            <label className="visually-hidden" for="password"></label>
+            <input
+              className="form-items"
+              type="password"
+              name="password"
+              id="password"
+              placeholder="비밀번호"
+              onChange={handlePwInput}
+            />
+            <button className="password-button">show</button>
+          </div>
+          <button
+            // tabindex="0"
+            // formaction="list.html"
+            id="login-button"
+            type="submit"
+            // disabled="true"
+            className={validateLogin ? "login-validated" : ""}
+            onClick={goLogin}
+          >
+          로그인
+          </button>
+        </form>
+        <Link className="lost-pw" to="/detail">
+          비밀번호를 잊으셨나요?
+        </Link>
+      </div>
     </div>
   );
 };
